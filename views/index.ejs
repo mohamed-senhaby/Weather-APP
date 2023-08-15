@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caprasimo&family=Permanent+Marker&family=REM:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/styles/main.css" />
+    <title>Weather APP</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="response-area">
+        <% if (locals.temperature) { %>
+        <h1>Current Temperature in <%= cityName %> is <%= temperature %>°</h1>
+        <% } %>
+      </div>
+      <div class="form-container">
+        <form id="myForm" method="post">
+          <div class="input-group">
+            <input
+              type="text"
+              id="cityName"
+              placeholder="Enter City Name"
+              name="city"
+              class="input-field"
+            />
+          </div>
+          <div class="input-group">
+            <input
+              id="customSubmit"
+              type="submit"
+              value="Click to Get City"
+              formaction="/get-city"
+              class="custom-button"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
